@@ -1,0 +1,77 @@
+<nav class="nav">
+    <h1><a routerLink="">E-Comm</a> </h1>
+  </nav>
+
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" formControlName="username">
+    <div *ngIf="username?.invalid && (username?.dirty || username?.touched)">
+        <div *ngIf="username?.errors?.['required']">
+          Username is required.
+        </div>
+        <div *ngIf="username?.errors?.['minlength'] as minlength">
+          Username must be at least {{ minlength?.requiredLength }} characters long.
+        </div>
+      </div>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" formControlName="email">
+    <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+        <div *ngIf="email?.errors?.['required']">
+          Email is required.
+        </div>
+        <div *ngIf="email?.errors?.['email']">
+          Email must be a valid email address.
+        </div>
+      </div>
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" formControlName="password">
+    <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+        <div *ngIf="password?.errors?.['required']">
+          Password is required.
+        </div>
+        <div *ngIf="password?.errors?.['minlength'] as minlength">
+          Password must be at least {{ minlength.requiredLength }} characters long.
+        </div>
+      </div>
+  </div>
+  <button type="submit" [disabled]="signupForm?.invalid">Signup</button>
+  <input type="button" value="Back"   [routerLink]="['']"   />
+</form>
+<div class="footer">
+    <ul>
+        <li>
+          <a href="">Become a Seller</a>
+        </li>
+        <li>
+          <a href="">Polices</a>
+        </li>
+        <li>
+          <a href="">Terms and Conditions</a>
+        </li>
+        <li>
+          <a href="">Help Center</a>
+        </li>
+        <li>
+            <a href="">News</a>
+        </li>
+        <li>
+            <a href="">Facebook</a>
+        </li>
+        <li>
+            <a href="">Youtube</a>
+        </li>
+        <li>
+            <a href="">Sitemap</a>
+        </li>
+        <li>
+            <a href="">FAQ</a>
+        </li>
+      </ul>
+      <p>© 2022 E-comme Project</p>
+      
+  </div>

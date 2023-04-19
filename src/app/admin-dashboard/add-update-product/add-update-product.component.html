@@ -1,0 +1,41 @@
+<div class="update-product">
+    <h1 >{{productId === 0 ? 'Add Product' : 'Update Product'}}</h1>
+    <p class="message-p">{{productMessage}}</p>
+
+    <img style='width:400px;float: left;' *ngIf="productId>0" src='{{ "../../../assets/ProductImages/" + product.image }}' />
+    <form #addProduct="ngForm" style="float: left; margin-left: 30px;"
+    (ngSubmit)="submit(addProduct.value)"
+     class="common-form">
+      <input
+        type="text"
+        class="form-input"
+        placeholder="Enter Product Name"
+        name="name"
+        ngModel="{{product?.name}}"
+      />
+      <input
+      type="text"
+      class="form-input"
+      placeholder="Enter Product Price"
+      name="price"
+      ngModel="{{product?.price}}"
+    />
+  <input
+  type="text"
+  class="form-input"
+  placeholder="Enter Product Qty"
+  name="quantity"
+  ngModel="{{product?.quantity}}"
+  />
+  
+  <input
+  type="file"
+  (change)="onChange($event)"
+  class="form-input"
+  placeholder="Enter Product Image URL"
+  name="image"
+  />
+  <button class="form-button" >{{productId === 0 ? 'Add Product' : 'Update Product'}}</button>
+    </form>
+  </div>
+  

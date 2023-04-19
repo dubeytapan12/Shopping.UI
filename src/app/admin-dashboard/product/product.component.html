@@ -1,0 +1,72 @@
+<div class="product-list">
+  <h1>Product List</h1>
+  <p class="message-p">{{ productMessage }}</p>
+  <table style="width: 90%;">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Qty</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of productList">
+        <td><img src='{{ "../../../assets/ProductImages/" + item.image }}' /></td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>
+          <fa-icon (click)="deleteProduct(item.id)" [icon]="icon"></fa-icon>
+          <a class="adjust-update-link" routerLink="/admin/add-update-product/{{item.id}}"> <fa-icon  [icon]="iconEdit"></fa-icon></a>
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- <div class="container">
+    <div *ngIf="isAdd || isEdit">
+      <app-product-form 
+        [product]="product" 
+        (add)="addProduct($event)" 
+        (update)="updateProduct($event)" 
+        (cancel)="isAdd = false; isEdit = false">
+      </app-product-form>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Products</h2>
+        <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of products">
+              <td>{{product.id}}</td>
+              <td>{{product.name}}</td>
+              <td>{{product.description}}</td>
+              <td>{{product.price | currency}}</td>
+              <td>
+                <button class="btn btn-sm btn-primary" (click)="getProductById(product.id); isEdit = true;">Edit</button>
+                <button class="btn btn-sm btn-danger" (click)="deleteProduct(product.id)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        {{isAdd}}
+        <button class="btn btn-sm btn-success" (click)="isAdd = true;">Add Product</button>
+      </div>
+    </div>
+  </div> -->
+  
