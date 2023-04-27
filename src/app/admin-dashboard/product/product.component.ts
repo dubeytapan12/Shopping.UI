@@ -17,6 +17,7 @@ export class ProductComponent implements OnInit {
   icon = faTrash;
   iconEdit=faEdit;
   productMessage: undefined | string;
+  filterText: string;
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {

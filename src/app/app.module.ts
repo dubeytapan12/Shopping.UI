@@ -17,6 +17,7 @@ import { UserCartComponent } from './user-dashboard/user-cart/user-cart.componen
 import { UserWishCartComponent } from './user-dashboard/user-wish-cart/user-wish-cart.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { FilterPipe } from './filter-pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     UserCartComponent,
     UserWishCartComponent,
     SignUpComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

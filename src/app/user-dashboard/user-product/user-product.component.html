@@ -1,8 +1,12 @@
 
 <div class="product-list-wrapper">
 <h1> Products</h1>
+
+<div>
+  <input type="text" [(ngModel)]="filterText" placeholder="Filter products by name">
+</div>
 <div class="row">
-  <div class="col-sm-3" *ngFor="let item of trendyProducts">
+  <div class="col-sm-3" *ngFor="let item of trendyProducts | filter: filterText">
     <div class="product-item">
       <img src='{{ "../../../assets/ProductImages/" + item.image }}' alt="">
     <div class="product-details">

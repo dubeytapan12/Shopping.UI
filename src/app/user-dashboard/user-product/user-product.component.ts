@@ -11,8 +11,8 @@ import { concatAll, map, reduce } from 'rxjs';
   styleUrls: ['./user-product.component.css']
 })
 export class UserProductComponent implements OnInit {
-
-  trendyProducts:undefined | ProductResponse[];
+  filterText: string;
+  trendyProducts:ProductResponse[] = [];
   constructor(private product:ProductService,private user:UserService, private router: Router) {}
  
    ngOnInit(): void {

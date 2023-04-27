@@ -82,6 +82,9 @@
     right: 0;
     left: 0;
     background-color: #fff;
+    width: 100%;
+    float: left;
+    margin: 10px;
 }
 .footer ul{
     list-style-type: none;

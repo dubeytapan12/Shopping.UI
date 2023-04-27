@@ -1,6 +1,7 @@
 
 export class LoginResponse {
     user: LoginInnerResponse;
+    statusCode: number;
   }
 
   export class LoginInnerResponse {

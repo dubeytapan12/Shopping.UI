@@ -26,13 +26,18 @@ export class LoginComponent implements OnInit {
       this.user = this.loginForm.value;
       this.authService.login(this.user.username,this.user.password).subscribe({
         next: item=> {
-           if(item.user.role.toLowerCase()=='admin') {
+          if(item.statusCode==100) {
+            alert('invalid username or password');
+          }
+          else { 
+          if(item.user.role.toLowerCase()=='admin') {
             this.router.navigate(['/admin']);
            }
            else {
             this.router.navigate(['/user']);
            }
            localStorage.setItem('user-data',JSON.stringify(item));
+          }
         },
         error: e=> {
           alert('invalid username or password');
